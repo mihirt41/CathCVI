@@ -97,10 +97,10 @@
   for(i in c(2:nrow(countyPop))){  
     j<-i-1
     if (!(j%in%sigCoeffModel)){
-      a<-c(rep(as.vector(countyPop[j,1]),7),  
-           rep(as.vector(countyPop[j,2]),5), 
-           rep(as.vector(countyPop[j,3]),5),
-           rep(as.vector(countyPop[j,4]),4) )
+      a<-c(rep(as.vector(countyPop[i,1]),7),  
+           rep(as.vector(countyPop[i,2]),5), 
+           rep(as.vector(countyPop[i,3]),5),
+           rep(as.vector(countyPop[i,4]),4) )
     }else{ 
       a<-as.vector(table[which(j==sigCoeffModel),c(1:21)])
     } 
