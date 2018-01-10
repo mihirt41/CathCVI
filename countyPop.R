@@ -129,6 +129,16 @@
 
   
 ###Total Population Numbers New Jersey
-  
-  popTable<-colSums(popTable)
+
+popTable<-colSums(countyPopTable)
+
+
+###Filling in Weird Gap
+slope <- (popTable[13] - popTable[7]) / 6
+intercept <- popTable[7]
+
+newPop<-(c(1:5) * slope) + intercept
+popTable [8:12] <-newPop
+
+write.csv(popTable, file = "popData.csv")
   
